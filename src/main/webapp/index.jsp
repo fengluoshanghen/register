@@ -26,13 +26,13 @@
 </script>
 </head>
 <body>
-<form id="select" action="/user/getAllUser" method ="post">
-	<div style="text-align:right;">
-		<input type="text"  name="sname" placeholder="请输入姓名"> <input type="button" onclick="submitForm()" value="检索"/>
 
-</div>
-</form>
 	<h6 align="center"><a href="/user/toAddUser">添加用户</a></h6>
+	<form id="select" action="/user/getAllUser" method ="post">
+		<div style="text-align:right;">
+			<input type="text"  name="sname" placeholder="请输入姓名"> <input type="button" onclick="submitForm()" value="检索"/>
+		</div>
+	</form>
 	<table border="1" align="center" width="800px">
 		<tbody>
 			<tr>
@@ -45,7 +45,7 @@
 					<tr>
 						<td>${user.userName }</td>
 						<td>${user.age }</td>
-						<td>
+						<td align="center">
 							<a href="/user/getUser?id=${user.id }">编辑</a>
 							<a href="javascript:del('${user.id }')">删除</a>
 						</td>

@@ -65,7 +65,6 @@ public class UserController {
 	
 	@RequestMapping("/addUser")
 	public String addUser(User user,HttpServletRequest request){
-		
 		userManager.addUser(user);
 		
 		return "redirect:/user/getAllUser";

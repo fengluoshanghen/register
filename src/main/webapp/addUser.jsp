@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function addUser(){
+		var name = document.getElementsByName("userName");
+		var age = document.getElementsByName("age");
+		if("" == name){
+			alert("请输入姓名");
+		}if("" == age){
+			alert("请输入年龄");
+		}
 		var form = document.forms[0];
 		form.action = "/user/addUser";
 		form.method="post";
