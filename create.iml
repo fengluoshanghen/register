@@ -59,5 +59,24 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.25" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:jconsole:1.8.0">
+        <CLASSES>
+          <root url="jar://E:/Program Files/Java/jdk1.8.0_102/jre/../lib/jconsole.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:tools:1.8.0">
+        <CLASSES>
+          <root url="jar://E:/Program Files/Java/jdk1.8.0_102/jre/../lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

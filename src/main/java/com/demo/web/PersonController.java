@@ -43,7 +43,7 @@ public class PersonController {
         String code = request.getParameter("code");
         System.out.println("用户名：" + name + "；密码为:" + pwd);
         Person p = personService.login(name, pwd);
-        if(session.getAttribute("code").toString()==null){
+        if(null==session.getAttribute("code")){
             request.setAttribute("message", "验证码失效，请刷新后重试！");
             return "/personLogin";
         }
@@ -61,7 +61,7 @@ public class PersonController {
     }
 
 
-    @RequestMapping(value={"/toRegist", "person/toRegist"})
+    @RequestMapping(value="/toRegist")
 	public String toAddUser(){
 		return "/regist";
 	}

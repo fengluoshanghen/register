@@ -41,7 +41,7 @@
 
 			<tr>
 				<td></td><td><input type="submit" value="登录" onclick="return check(this.form)"/>
-			<input type="button"  value="注册"  onclick="window.location='person/toRegist'">
+			<input type="button"  value="注册"  onclick="window.location.href='/person/toRegist'">
 			<input type="reset" value="重置">
 		</td>
 			</tr>
