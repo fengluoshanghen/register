@@ -47,7 +47,7 @@ public class UserController {
 		request.setAttribute("count",count);
 		request.setAttribute("pageNumber", pageNumber);
 		request.setAttribute("pageCount", pageCount);
-		return "/index";
+		return "WEB-INF/demo/index";
 	}
 	
 	@RequestMapping("/getUser")
@@ -55,12 +55,12 @@ public class UserController {
 		
 		request.setAttribute("user", userManager.getUser(id));
 	
-		return "/editUser";
+		return "WEB-INF/demo/editUser";
 	}
 	
 	@RequestMapping("/toAddUser")
 	public String toAddUser(){
-		return "/addUser";
+		return "WEB-INF/demo/addUser";
 	}
 	
 	@RequestMapping("/addUser")

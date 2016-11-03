@@ -1,6 +1,11 @@
 package com.demo.entity;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 
 /**
@@ -11,9 +16,20 @@ import javax.persistence.*;
 @SequenceGenerator(name="personSEQ",sequenceName="person_SEQ_Oracle")
 public class Person {
     private Integer id;
+
+    @NotEmpty(message= "用户名不能为空！" )
     private String userName;
+
+    @NotEmpty(message= "密码不能为空！" )
+    @Length(min=6,max=16,message= "密码长度为6位到16位之间！" )
     private String userPassword;
+
+    @NotEmpty(message= "手机号码不能为空！" )
+    @Pattern(regexp="^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$", message="手机号格式不正确")
     private String phone;
+
+    @NotEmpty (message= "email地址不能为空！" )
+    @Email (message= "email地址无效！" )
     private String address;
 
     @Id
@@ -67,29 +83,5 @@ public class Person {
         this.address = address;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        Person that = (Person) o;
-
-        if (id != that.id) return false;
-        if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
-        if (userPassword != null ? !userPassword.equals(that.userPassword) : that.userPassword != null) return false;
-        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        if (address != null ? !address.equals(that.address) : that.address != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = (int) id;
-        result = 31 * result + (userName != null ? userName.hashCode() : 0);
-        result = 31 * result + (userPassword != null ? userPassword.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        return result;
-    }
 }

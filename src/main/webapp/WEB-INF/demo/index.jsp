@@ -23,11 +23,13 @@
 	function submitForm(){
 		document.getElementById("select").submit();
 	}
+
 </script>
 </head>
 <body>
 
 	<h6 align="center"><a href="/user/toAddUser">添加用户</a></h6>
+	<span align="right"><a  href="/person/loginOut">退出</a></span>
 	<form id="select" action="/user/getAllUser" method ="post">
 		<div style="text-align:right;">
 			<input type="text"  name="sname" placeholder="请输入姓名"> <input type="button" onclick="submitForm()" value="检索"/>

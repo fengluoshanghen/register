@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>    
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +11,7 @@
 	<script type="text/javascript" src="../js/jquery-1.7.1.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		function check(form){
+	<!--	function check(form){
 			var email = document.getElementById("address");
 			var phone = document.getElementById("phone");
 			if($("#name").val()==null || $("#name").val()==""){
@@ -33,16 +34,17 @@
 				return false;
 			}
 			return true;
-		};
-		
+		};-->
+
 	</script>
 </head>
 <body>
 	
-	<form action="/person/regist" method="post" name="regist_form" onsubmit="return check(this)">
+	<form:form action="/person/regist" method="post" name="regist_form" onsubmit="return check(this)" modelAttribute="Person">
 		<table align="center" width="50%">
 			<tr>
 				<td>用户名:</td><td><input type="text" name="userName" id="name"/></td><td id="msg1" align="left" width="30%"></td>
+				<td><form:errors path="userName"></form:errors></td>
 			</tr><tr>
 				<td>密    码：</td><td><input type="password" name="userPassword" id="pwd"/></td><td id="msg2" align="left" width="30%"></td>
 			</tr><tr>
@@ -55,7 +57,8 @@
 				onclick="return check(this.form)"/></td>
 			</tr>
 		</table>
-	</form>	
+	</form:form>
+	${requestScope.errfields}
 	${requestScope.registPerson}
 </body>
 </html>

@@ -32,7 +32,7 @@
 			<tr>
 				<td>用户名:</td><td><input type="text" name="userName" id="name" value=""/></td><td id="msg1" align="left" width="30%"></td>
 			</tr><tr>
-				<td>密    码：</td><td><input type="password" name="password" id="pwd" value=""/></td><td id="msg2" align="left" width="30%"></td>
+				<td>密    码：</td><td><input type="password" name="userPassword" id="pwd" value=""/></td><td id="msg2" align="left" width="30%"></td>
 			</tr>
 
 			<tr><td>验证码</td><td><input id="index_code" name="code" type="text" /></td>
